@@ -1,0 +1,2040 @@
+Hey coders Cómo están el día de hoy Les
+
+traigo un video práctico acerca de aws
+
+amplify el cual es un servicio de awws
+
+que nos permite tener el backend creado
+
+en cuestión de minutos si ustedes son
+
+desarrollad de frontend y quieren crear
+
+una aplicación móvil una aplicación web
+
+frontend y no quieren crear el backend
+
+desde cero pueden utilizar awws amplify
+
+que ya les ofrece una Api creada con
+
+Apps ya les ofrece una base de datos
+
+como Dynamo db autenticación con cognito
+
+funciones server con lambda alojamiento
+
+de archivo y Hosting del sitio web con
+
+S3 y así con otros servicios de awws es
+
+decir nosotros podríamos utilizar cada
+
+uno de estos servicios que les he
+
+mencionado por aparte pero lo que hace
+
+amplify Es unirlo para darnos un
+
+servicio ya integrado que nosotros
+
+podemos utilizar y podemos configurarlo
+
+desde código el día de hoy Les voy a
+
+mostrar Cómo crear un proyecto desde
+
+cero en nextjs con amplify y vamos a
+
+empezar a crear un proyecto que va a
+
+lucir de la siguiente forma la
+
+aplicación que vamos a desarrollar luce
+
+de la siguiente forma aquí tengo un
+
+formulario de login y un formulario para
+
+poder Crear cuenta vamos a primero
+
+crearnos una cuenta voy a colocarle un
+
+correo con una contraseña Le vamos a dar
+
+en Crear cuenta y lo que va a hacer es
+
+mandarnos un correo de confirmación con
+
+un código es decir yo tengo que entrar
+
+en mi correo aquí por ejemplo he
+
+recibido el código de confirmación
+
+simplemente voy a colocarlo Aquí le voy
+
+a dar confirmar y listo Esto me lanza la
+
+aplicación que aquí me dice tareas de
+
+este usuario y yo puedo empezar a crear
+
+alguna tarea por ejemplo digo mi primer
+
+tarea le doy aceptar ahí aparece voy a
+
+darle una segunda tarea una tercer tarea
+
+y listo con esto yo también puedo
+
+empezar a eliminar simplemente dando un
+
+clic de hecho la aplicación es muy
+
+simple e incluso ya tiene conexión en
+
+tiempo real esto quiere decir que si yo
+
+vuelvo a abrir la misma aplicación y en
+
+un lado yo yo elimino un dato esa se ve
+
+reflejada en el otro ahora esta
+
+aplicación a pesar de que es sencilla ya
+
+está desplegada porque cuando lo
+
+utilizamos desde aw y amplify podemos
+
+tener el entorno de producción desde el
+
+momento en que creamos el proyecto esto
+
+nos va a ser muy útil porque nos evita
+
+estar enfocándonos en el despliegue y
+
+Simplemente nos da la posibilidad de
+
+enfocarnos en el desarrollo y lo que
+
+están viendo de forma resumida es un
+
+proyecto que ya está utilizando los
+
+dominios de aws está alojando el
+
+servicio de frontend en S3 ya está
+
+alojando el servicio de nuestra
+
+aplicación y lo que acabamos de ver en
+
+forma resumida es gracias a que amplify
+
+ya tenemos el servicio del dominio ya
+
+tenemos el despliegue automático el
+
+despliegue del backend la base de datos
+
+en Dynamo odb la autenticación con
+
+cognito e incluso las interfaces también
+
+ya no los ofrece Gracias a que también
+
+tiene un conjunto de bibliotecas ui
+
+Entonces si quieren saber cómo se puede
+
+crear esta aplicación de forma rápida
+
+utilizando awc amplify en este video les
+
+voy a mostrar un paso a paso Así que si
+
+les interesa pues vamos a empezar codos
+
+como es difícil encontrar información
+
+sobre temas de autenticación y
+
+autorización en awws y de cómo funcionan
+
+otros de sus servicios ya que una nube
+
+muy grande el cual es una web en donde
+
+puedes encontrar una enorme variedad de
+
+cursos sobre programación Inteligencia
+
+artificial matemáticas ciencia de datos
+
+hasta el desarrollo de aplicaciones y
+
+aquí por supuesto también puedes
+
+encontrar cursos de autenticación en aws
+
+para aquellos que les interese conocer
+
+desde conceptos básicos hasta conceptos
+
+avanzados en donde pueden aprender cómo
+
+autenticar simplemente con correo y
+
+contraseña o también con proveedores
+
+externos como pueden ser Google y meta
+
+entre estos cursos puedes aprender temas
+
+como awws congnito aws amplify servicios
+
+de inteligencia aral oficial de awws
+
+awws pinpoint para analíticas y muchos
+
+otros servicios más y usando estos
+
+cursos puedes aprender muchos otros
+
+servicios más dedicados a la nube de aws
+
+y para poder acceder puedes utilizar el
+
+enlace que te dejo en la descripción e
+
+incluso usando el mismo enlace puedes
+
+obtener 10 de descuento cuando adquieras
+
+tu primer curso antes de que empecemos a
+
+escribir código primero vamos a conocer
+
+un poco acerca de amplify y su
+
+documentación para encontrar la
+
+documentación de amplify pueden visitar
+
+el sitio docs.fresco.me
+
+iniciar rápidamente un proyecto en este
+
+caso de hecho nosotros cuando entramos
+
+en su página vamos a ver una lista de
+
+frameworks que podemos utilizar con
+
+amplify En donde podemos encontrar
+
+aplicaciones web aplicaciones móviles e
+
+incluso también aplicaciones
+
+multiplataforma que se integran con este
+
+backen as service de forma resumida
+
+amplify nos permite poder crear el
+
+backen de forma rápida es decir ya nos
+
+da una ipi lista para poder consultar ya
+
+nos da una base de datos subida de
+
+archivos el despliegue incluso de la
+
+aplicación web analíticas y una enorme
+
+cantidad de características que ya
+
+vienen incluidas gracias a los servicios
+
+de aww Así que en este video les voy a
+
+mostrar Cómo crear un proyecto de forma
+
+rápida y a partir de allí vamos a
+
+iniciar con la creación de una
+
+aplicación y vamos a ir entendiendo Cómo
+
+se puede crear rápidamente un proyecto
+
+web backend o mejor dicho un proyecto
+
+web full stack ya que vamos a estar
+
+complementándolo con nuestro propio
+
+frontend ahora en mi caso Yo voy a estar
+
+utilizando nexts para poder darles el
+
+ejemplo pero ustedes pueden ver que hay
+
+una enorme variedad de frameworks
+
+entonces voy a iniciar aquí con next Yes
+
+damos un click y le damos en get started
+
+en el caso de next tenemos dos formas de
+
+crear un proyecto utilizando la carpeta
+
+pages o utilizando la carpeta PP la
+
+forma más moderna es utilizando la
+
+carpeta app Así que vamos por esa ruta a
+
+partir de allí nos dice algunos
+
+requerimientos y lo más importante es
+
+que para poder iniciar un proyecto con
+
+next y amplify ya nos da un template que
+
+podemos importar Entonces lo primero que
+
+vamos a hacer es clonar este repositorio
+
+simplemente de un click Y si ya está en
+
+logueado con su cuenta de github lo va a
+
+redireccionar a su cuenta para que
+
+pueden hacer un Clon por ejemplo aquí me
+
+dice que voy a estar utilizando el
+
+template de awws de amplify next
+
+template y aquí puedo colocarle un
+
+nombre propio por ejemplo voy a llamar
+
+este proyecto nextjs demo o nextjs
+
+amplified gu aws y en ese caso yo lo voy
+
+a crear en mi cuenta de fast web y
+
+simplemente le voy a dar en crear
+
+repositorio Pero antes voy a dejarlo en
+
+público para que ustedes también puedan
+
+verlo esto empieza a crear un
+
+repositorio dentro de mi propia cuenta y
+
+una vez allí pues ya puedo empezar a
+
+clonarlo pero en lugar de hacerlo
+
+directamente desde aquí vamos a
+
+desplegarlo de una vez para que puedan
+
+ver cómo funciona en producción para
+
+poder hacer eso vamos a la documentación
+
+nuevamente y lo siguiente es ir a aws en
+
+la sección de amplify cuando damos un
+
+clic en Ese botón ya nos redirecciona al
+
+login de awws Así que simplemente
+
+tenemos que colocar nuestra cuenta en mi
+
+caso voy a colocar mi correo mi
+
+contraseña y voy a darle en iniciar
+
+sesión una vez allí vamos a ver un panel
+
+como este en donde nos permite poder
+
+escoger desde dónde podemos traer el
+
+código fuente así como github también
+
+tenemos otras plataformas como puede ser
+
+bitbet code commit o gitlab en este caso
+
+vamos a escoger github y vamos a darle
+
+siguiente y aquí nos va a pedir quizás
+
+que le demos acceso a github si ustedes
+
+les pide eso simplemente denle aceptar y
+
+continúen una vez le den aceptar van a
+
+ver aquí todos sus repositorios de su
+
+cuenta o los que le han dado acceso y en
+
+mi caso voy a escoger desde mi cuenta de
+
+fast web por ejemplo en mi caso Yo veo
+
+una ventana como esta pero aquí
+
+simplemente escojan el usuario que
+
+quieran utilizar en mi caso yo tengo
+
+varios voy a darle el el usuario Fast
+
+web Le voy a dar todos los repositorios
+
+le voy a instalar y autorizar le voy a
+
+dar ahí mi contraseña y listo con esto
+
+ya tiene acceso ahora a mis repositorios
+
+de mi cuenta vamos a esperar que cargue
+
+un poco y ya con eso nosotros podemos
+
+Buscar nuestro repositorio en mi caso el
+
+proyecto se llama aast web nexts amplify
+
+aws Le voy a dar siguiente y ese es el
+
+repo que había desplegado hace algunos
+
+segundos Entonces vamos a colocarle aquí
+
+información extra si ustedes quieren
+
+pueden cambiarle el nombre y aquí debajo
+
+lo que van a ver es el comando que va a
+
+construir la aplicación y en el caso de
+
+esta carpeta es donde está el código
+
+compilado en el caso de next es el punto
+
+n le damos siguiente Y a partir de aquí
+
+Hace una pequeña verificación en esta
+
+parte inferior carga un poco no demora
+
+mucho de hecho Y a partir de aquí ya
+
+podemos empezar a crear el proyecto le
+
+damos guardar y desplegar y con esto se
+
+va a empezar a desplegar un nuevo
+
+proyecto de nextjs y va a estar
+
+utilizando los servicios de amplify en
+
+realidad como yo les he mencionado
+
+amplify utiliza todos los servicios de
+
+awws Como por ejemplo para subir los
+
+archivos utiliza S3 para tener
+
+autenticación utiliza congnito para
+
+tener base de datos Dynamo db y así Y a
+
+partir de aquí no nosotros vamos a ver
+
+una ventana como esta aquí por ejemplo
+
+pueden ver que no está desplegado sino
+
+que aún se está implementando pero ya
+
+obtenemos un dominio que podemos visitar
+
+si queremos ver la aplicación en este
+
+caso aquí me dice que esta ventana o
+
+esta página se va a reemplazar luego con
+
+la aplicación de verdad pero pero con
+
+esto ya nosotros podemos ir trabajando
+
+Entonces lo que vamos a hacer es clonar
+
+este repositorio que acabamos de crear y
+
+que está basado en el template de awws
+
+Entonces vamos a minimizar aquí y voy a
+
+venir aquí en mi escritorio y voy a
+
+clonarlo voy a abrir una terminal Voy a
+
+navegar hacia el escritorio con el
+
+comando CD desktop y a partir de Aquí
+
+vamos a ejecutar un clon utilizando s sh
+
+pueden clonarlo de cualquier otra forma
+
+voy a darle git Clon y vamos a pegar esa
+
+dirección y damos un enter eso lo que va
+
+a hacer es Descargar la carpeta y
+
+apartir de aquí nosotros podemos abrirlo
+
+dentro de nuestro editor de código en
+
+este caso voy a estar utilizando visual
+
+Studio code Cuando tenemos este proyecto
+
+aquí estamos trayendo tanto el código de
+
+next como También tenemos una carpeta
+
+amplify en donde aquí nosotros podemos
+
+configurar todo el código de backend es
+
+decir podemos crear tanto la lógica de
+
+la autenticación y está permitiendo
+
+autenticar con algún otro proveedor SMS
+
+y demás también tenemos Data que es para
+
+para poder configurar Cómo es que se
+
+están relacionando los datos es decir si
+
+queremos guardar o crear alguna tabla lo
+
+podemos hacer desde aquí de momento solo
+
+tengo un solo esquema que es un esquema
+
+de too y como pueden ver la lógica está
+
+escrita en typescript Ahora hay algunos
+
+paquetes que tenemos que instalar Así
+
+que el primer paso que vamos a hacer es
+
+abrir la terminal aquí de visual Studio
+
+code y escribí El Comando mpen install o
+
+mpen I esto lo que va a hacer es
+
+instalar todas las dependencias aquí ya
+
+termino de instalar y de hecho si vamos
+
+en amplify también ya ha terminado de
+
+generar la aplicación en producción
+
+vamos a venir aquí en el enlace que se
+
+ha generado este sería la aplicación ya
+
+en una URL de verdad como pueden ver con
+
+https y demás Y a partir de aquí
+
+nosotros podemos ingresar o podemos
+
+crear datos por ejemplo puedo darle un
+
+New si lanza una alerta y aquí puedo
+
+crear mi primer tarea por ejemplo le
+
+damos en aceptar esto crea allí una
+
+tarjeta y puedo seguir escribiendo y
+
+esto es lo que está haciendo es
+
+guardando los datos en awws Dynamo db de
+
+hecho esto ya es una aplicación frontend
+
+ya hecha que nosotros podemos empezar a
+
+alterar Entonces esta sería la
+
+aplicación de producción pero lo que
+
+vamos a hacer ahora es también
+
+ejecutarlo en desarrollo Así que vamos a
+
+ejecutar El Comando mpn r dev en el
+
+local Host y Esto va a levantar una
+
+aplicación en el puerto 3000 Así que
+
+vamos a ir en el navegador y vamos a
+
+visitar el local Host 3000 y bueno en
+
+este caso me está dando un error y es
+
+que justamente Al momento de ejecutar la
+
+aplicación él necesita un archivo
+
+llamado amplify outputs json este
+
+archivo de aquí nosotros lo podemos
+
+conseguir desde el propio panel de
+
+control de amplify es decir si vamos en
+
+amplify y damos un clic en nuestro
+
+proyecto vamos a ver que tenemos una
+
+rama incluso nosotros podemos tener
+
+varias ramas por aplicación ya
+
+desplegadas vamos a venir aquí en Main y
+
+entre estas opciones la que nos importa
+
+es esta que dice recursos de backen
+
+implementado y aquí hay un archivo que
+
+se llama amplify output json simplemente
+
+damos un clic Esto va a descargar un
+
+archivo json vamos a abrirlo en nuestro
+
+escritorio en mi caso lo voy a arrastrar
+
+hacia fuera y este archivo amplify
+
+outputs vamos a colocarlo dentro de
+
+nextjs amplify Okay y bueno el archivo
+
+debe llamarse amplify su outputs json en
+
+mi caso al momento de descargarlo como
+
+yo tenía otro allí le he colocado un uno
+
+pero asegúrense de que se llame de esta
+
+forma amplify sug outputs Jason Okay
+
+este archivo lo que hace es que Al
+
+momento de ejecutar la aplicación si yo
+
+refresco pues ya sabe a dónde se tiene
+
+que conectar es como un archivo de
+
+configuración o de conexión ahora con
+
+esto nosotros vamos a ver en el local
+
+Host 3000 la misma aplicación que vemos
+
+en producción solamente que estamos en
+
+el local Host 3000 aquí por ejemplo sale
+
+en color claro porque aquí yo tengo una
+
+extensión el color de verdad es este
+
+realmente Okay vamos a crear otro dato
+
+doy un enter y esto se añade ahora si
+
+ustedes quieren ver en dónde están estos
+
+datos pueden ir en el servicio de Dynamo
+
+deb y vamos a ir allí y en Dynamo
+
+podemos venir en Tablas y en las tablas
+
+pueden ver que aquí tengo eh un to
+
+creado y Dentro de este too nosotros
+
+podemos ver los datos de hecho estes son
+
+como sus propiedades de la tabla pero si
+
+queremos ver o explorar los datos que
+
+están dentro de la tabla venimos aquí
+
+donde dice explorar elementos y aquí
+
+pueden ver que tengo ids de cadena único
+
+es decir son identificadores únicos de
+
+una tabla aquí me dice De qué tipo de
+
+datos son que es exactamente lo que he
+
+escrito en esos formularios con aquí
+
+está con su fecha de creación y fecha de
+
+actualización es decir ya están
+
+guardados en una base de datos en la
+
+nube ahora si yo quiero eliminarlos pues
+
+puedo empezar a alterar el código que
+
+viene desde nextjs vengo aquí en App
+
+vengo en page y aquí está el código es
+
+solamente una página Pero puede empezar
+
+a entenderlo a partir de allí aquí
+
+arriba yo tengo algunos imports tanto de
+
+re como de los paquetes de amplify en
+
+realidad no es tan necesario conocerlos
+
+todos lo primero es conocer este amplify
+
+configure que es justamente una función
+
+que nos permite poder leer el archivo de
+
+configuración que hemos descargado y
+
+poder saber a dónde va a tener que hacer
+
+las peticiones es como la cadena de
+
+conexión luego Tenemos también un client
+
+que viene a ser la conexión con la base
+
+de datos por ejemplo de cli nosotros
+
+podemos tener tablas para tareas tablas
+
+para categorías de productos lo que
+
+queramos y todo eso viene desde models
+
+aquí incluso lo que pasa es que él
+
+utiliza un obser query que es
+
+básicamente para poder refrescar o
+
+reiniciar los datos cada vez que cambian
+
+desde el backend es decir si yo vengo
+
+aquí en la aplicación y coloco tanto la
+
+aplicación de producción y al lado
+
+coloco la aplicación de desarrollo como
+
+pueden ver es la misma aplicación
+
+entonces si yo elimino un dato o añado
+
+algo por ejemplo supongamos que añado
+
+algo nuevo le digo tarea cuarta y le doy
+
+aceptar pueden ver que en ambas se
+
+ejecuta Eso es porque ya tiene una
+
+conexión en tiempo real inicialmente
+
+Cuando carga la aplicación él carga las
+
+listas de tareas y también tiene una
+
+función para crear tareas ahora desde
+
+este Main simplemente está recorriendo
+
+esas tareas y ya estaría no está
+
+haciendo nada más entonces lo que vamos
+
+a hacer es también crear una función
+
+para eliminar venimos aquí debajo del
+
+create to do y voy a escribir function
+
+delete to do por ejemplo y ahora vamos a
+
+ejecutar aquí otra consulta como yo le
+
+dije ese client es la base de datos
+
+Entonces le digo declan de todos los
+
+modelos que tienes el to do vamos a
+
+eliminar el que queramos Ahora yo voy a
+
+decirle cuando llamen este delete te van
+
+a pasar un ID que es de tipo stram y ese
+
+ID lo vas a pasar aquí Entonces vas a
+
+eliminar buscando por un ID le puedo
+
+colocar ID do pun ID o forma abreviada
+
+simplemente ID Esto va a enviar una
+
+petición o va a ejecutar cada vez que
+
+nosotros llamemos este delete to do una
+
+petición al backend ahora para poder
+
+hacerlo simplemente venimos por ejemplo
+
+en el Li cada vez que yo doy un clic
+
+puedo decirle cuando den un clic en este
+
+en esta tarea vamos a ejecutar un delete
+
+to do y le paso el tod que estaba
+
+recibiendo vamos a guardarlo y este es
+
+código básico de react esto quiere decir
+
+que si yo por ejemplo elimino una tarea
+
+Bueno aquí no funciona porque es el de
+
+producción esto es el de desarrollo Este
+
+es el que tiene mis cambios Vamos a
+
+darle un click y pueden ver que se
+
+elimina doy otro click y se elimina y de
+
+hecho esto de nuevo es la base de datos
+
+si yo refresco aquí y refresco aquí
+
+pueden ver que esto viene con los datos
+
+actualizados Ahora aquí tenemos una
+
+aplicación muy básica que es un tod Pero
+
+qué pasa con la autenticación bueno
+
+nosotros podemos añadirlo fácilmente
+
+porque amplify también Ya trae ese
+
+módulo para poder empezar a integrarlo
+
+puedo venir aquí en la terminal voy a
+
+cancelar un segundo y voy a instalar un
+
+paquete que se llama amplify ui react
+
+este en realidad es simplemente para
+
+tener interfaces gráficas y esto nos va
+
+a permitir tener ya un formulario creado
+
+con estilos con botones con diseños que
+
+ya podemos llamar simplemente desde
+
+nuestra aplicación es decir amplify ui
+
+react es como traer chat 100 o material
+
+ui o mejor dicho un conjunto de
+
+bibliotecas de componentes vamos a
+
+ejecutarlo otra vez con mp room dev y
+
+para poder Añadir esa autenticación
+
+vengo aquí arriba y le voy a decir
+
+importa algo desde y vamos a colocar
+
+desde awws amplify ui react voy a traer
+
+un componente que se llama authenticator
+
+este componente va a englobar a nuestras
+
+páginas que queramos proteger eso
+
+podríamos colocarlo en el layout sin
+
+embargo como tengo una sola aplicación
+
+aquí voy a colocarlo encima de este h1
+
+voy a decirle authenticator y aquí voy a
+
+contener todo lo que está dentro de main
+
+de esta forma o también pueden hacer que
+
+lo contenga toda la aplicación es decir
+
+que esté encima de main y authenticator
+
+sea el componente raíz ahora todo el
+
+contenido el Main lo que nosotros
+
+podemos hacer es cortarlo un segundo
+
+porque aquí nos puede dar al momento de
+
+llamar este componente una función es
+
+decir Yo puedo ejecutar una función y
+
+dentro de esta función puedo retornar el
+
+Main hago todo esto porque esta función
+
+que contiene al resto de nuestra
+
+interfaz puede traer algunas propiedades
+
+por ejemplo puede traer una función Sign
+
+out si quiero cerrar la sesión o puede
+
+traer información del usuario Por
+
+ejemplo si yo quiero Añadir un botón
+
+para cerrar la sesión simplemente vengo
+
+aquí al final del ul y le digo voy
+
+Añadir un botón más y a este botón vamos
+
+a colocarle que diga cerrar sesión vo a
+
+colocarle í cerrar sesión y cuando se va
+
+a dar un clic en este botón vamos a
+
+llamar la función Sign out incluso no
+
+tengo que llamarlo con una función por
+
+aparte porque no va a retornar nada así
+
+que simplemente lo puedo llamar Sign out
+
+directamente vamos a guardarlo y de
+
+hecho si yo vengo en la aplicación vamos
+
+a venir en nuestra aplicación en la
+
+local Host 3000 y refresco vamos a ver
+
+que ahora yo Yo tengo un formulario allí
+
+que me está pidiendo que autentique
+
+Entonces vamos a enfocarnos de momento
+
+en el local Host 3000 para poder hacer
+
+funcionar esto simplemente podemos
+
+registrarnos porque esto ya está con
+
+lógica es decir yo simplemente voy a
+
+colocarle un correo y una contraseña y
+
+con eso bastaría en mi caso voy a
+
+escoger un servicio que se llama 10
+
+minut email este servicio de aquí lo que
+
+les permite es tener un correo
+
+rápidamente que va a rotar después de 10
+
+minutos Así que pueden utilizarlo aquí
+
+en su aplicación de amplify por ejemplo
+
+voy a crear una cuenta coloco ese correo
+
+voy a colocar una contraseña okay Voy a
+
+darle de hecho aquí en create accounts
+
+voy a colocar el correo nuevamente voy a
+
+colocarle una contraseña la misma
+
+contraseña y y una vez he colocado la
+
+misma contraseña voy a darle en create
+
+account Esto es lo que va hacer es
+
+registrarlo Pero antes de hacerlo pero
+
+antes de hacerlo me pide un código de
+
+confirmación Entonces voy en el servicio
+
+este de aquí del correo y aquí está el
+
+correo que me ha enviado awws esto es
+
+muy útil porque ya nos tiene integrado
+
+el envío de de correos Así que no
+
+tenemos que implementarlo y simplemente
+
+lo pegamos en nuestro formulario y le
+
+damos en confirmar esto lo que va a
+
+hacer es comprobarlo y redireccionar
+
+noos a la aplicación ahora nosotros
+
+podemos Cerrar la sesión podemos darle
+
+en cerrar sesión Y esto es en local es
+
+decir que a partir de aquí nosotros ya
+
+podríamos estar trabajando localmente
+
+con la autenticación pero en la URL de
+
+producción que nosotros hemos estado
+
+utilizando aún no tiene ninguno de esos
+
+cambios Entonces cómo lo
+
+redespacho vamos a guardarlos le digo
+
+git ad punto y vamos a colocarle git
+
+commit gu m y vamos a colocarle
+
+authentication damos un enter y ahora
+
+vamos a dar un git Push y con con el git
+
+Push es más que suficiente para que él
+
+pueda subirlo a github Y a partir de que
+
+se sube a github amplify se empieza a
+
+disparar con una actualización de hecho
+
+vamos a ir en nuestro panel de control
+
+de amplify vamos a venir aquí en njs
+
+awws amplify y aquí pueden ver que
+
+nuevamente se ha disparado la sección de
+
+implementando de hecho Esta vez va a ir
+
+mucho más rápido que la primera vez
+
+porque en la primera vez se estaba
+
+creando los servicios ahora ya no es
+
+necesario crearlos simplemente los está
+
+actualizando O mejor dicho está
+
+actualizando solo los servicios que
+
+hemos reescrito en este caso solo sería
+
+la aplicación frontend y si nosotros
+
+entramos en implementando incluso vamos
+
+vamos a ver qué dice implementación
+
+realizada que este es la generada hace
+
+un rato es la que utilizamos para poder
+
+generar la aplicación y si abrimos aquí
+
+donde dice compilar implementando vamos
+
+a ver cómo es que él va ejecutando todas
+
+estas pasos o va ejecutando los comandos
+
+iniciales para poder levantar nuestra
+
+aplicación y aquí Después de 4 minutos y
+
+35 segundos ha desplegado la aplicación
+
+y bueno vamos a venir ahora en la URL de
+
+producción y vamos a ver que ahora sí
+
+está levantando también con la
+
+autenticación y bueno todo debería
+
+funcionar de la misma forma es decir si
+
+yo me logueo con el correo que ya
+
+habíamos hemos obtenido en la sesión
+
+anterior es decir en este correo de aquí
+
+y venimos nuevamente en la aplicación de
+
+producción y hago login puedo entrar
+
+Dentro de este proyecto y puedo
+
+continuar editando puedo continuar
+
+eliminando Okay ahora el tema está en
+
+que cualquiera puede autenticarse si yo
+
+quiero relacionar estos usuarios que
+
+están autentic con los datos tengo que
+
+empezar a alterar de alguna forma la
+
+base de datos ahora otro tema también es
+
+que cada vez que yo estoy editando datos
+
+estoy alterando la base de datos de
+
+producción y trabajar con la base de
+
+datos de producción no es una buena idea
+
+cuando estamos desarrollando un proyecto
+
+Así que lo que vamos a hacer es también
+
+utilizar otra característica que tiene
+
+amplify que se llama sandbox la cual no
+
+permite poder generar un entorno aislado
+
+de desarrollo y que este no va a
+
+interferir con la aplicación de
+
+producción es decir si creamos un dato
+
+en desarrollo este no va a estar
+
+presente en la base de datos de
+
+producción Porque son dos entornos
+
+distintos pero para poder hacerlo
+
+primero tenemos que autenticar de hecho
+
+El Comando es muy sencillo Yo vengo aquí
+
+en la terminal y desde mi proyecto puedo
+
+ejecutar mpx de esta forma eh que es un
+
+abrado de amplify x y aquí nosotros
+
+podemos colocar sandbox este ampx nos
+
+permite poder ejecutar comandos de
+
+amplify y ese sandbox sería el entorno
+
+sandbox el entorno aislado el tema está
+
+en que para poder ejecutar esto si yo
+
+doy un enter Esto va a intentar recrear
+
+allí o va a intentar ejecutar ese
+
+entorno aislado pero como pueden ver
+
+aquí me ha dado un error me dice que el
+
+token es inválido esto significa que
+
+necesita algún tipo de autenticación
+
+entonces lo que yo voy a hacer para
+
+poder autenticarme Entonces es venir en
+
+mi cuenta de awws y vamos a entrar en
+
+otro servicio de awws que se llama Im
+
+ese servicio nos permite poder crear
+
+usuarios roles políticas para esos roles
+
+y demás en este caso vamos a crear un
+
+usuario Así que vamos a venir esta
+
+sección que dice usuarios vamos a venir
+
+aquí donde dice crear usuario y aquí le
+
+colocamos un nombre nuest usuario en mi
+
+caso voy a llamarlo amplify dev app
+
+vamos a llamarlo de esta forma le doy
+
+siguiente aquí le digo que voy a agregar
+
+un usuario del grupo copiar permisos en
+
+este caso voy a darle a este de aquí que
+
+dice adjuntar políticas directamente
+
+esto es como decirle le voy a dar
+
+determinados permisos a ese usuario y
+
+aquí entre todas las y aquí dentro de
+
+todos los accesos que puedo darle dentro
+
+de awws puedo colocar simplemente
+
+amplify busco aquí y me va a mostrar
+
+esta política que se llama administrator
+
+Access amplify que es un un
+
+administrador del servicio de amplify le
+
+voy a dar siguiente aquí me dice si
+
+quiero detallar más información
+
+simplemente le voy a dar crear usuario y
+
+con esto ya tengo un usuario nuevo ahora
+
+el tema está en que necesitamos
+
+autenticar para autenticar vamos a tener
+
+que crear aquí en amplify deap Vamos a
+
+entrar en nuestro usuario un token voy a
+
+venir aquí donde dice credenciales de
+
+seguridad y si bajamos un poco vamos a
+
+ver una sección que se llama Access
+
+tokens o tokens de acceso de hecho se
+
+llama claves de acceso es este cuadro de
+
+aquí aquí tiene un botón que dice crear
+
+claves de acceso y aquí nos pide a
+
+través de qué forma vamos a estar
+
+utilizando este usuario en nuestro caso
+
+vamos a estar utilizando este que dice
+
+interfaz de línea de comandos y aquí
+
+debajo aceptamos estas recomendaciones y
+
+confirmación le damos en siguiente y con
+
+esto vamos a obtener una clave de acceso
+
+aquí le damos en confirmar le damos en
+
+siguiente y aquí simplemente le damos en
+
+crear clave de acceso con esto vamos a
+
+obtener tanto una clave de acceso como
+
+una clave de acceso secreta o lo que es
+
+lo mismo un Api key y un Api Secret y
+
+bueno para poder empezar a colocar estas
+
+credenciales no van en el proyecto sino
+
+que tenemos que instalar un click de
+
+awws para poder hacer eso simplemente
+
+pueden buscar algo como esto aws es
+
+click install y van a llegar en la
+
+documentación de awws donde pueden
+
+instalar este click tanto para Linux
+
+para Mac y para Windows en mi caso estoy
+
+en Windows Así que una forma de
+
+instalarlo rápidamente es utilizando
+
+estos comandos que ven aquí e que de
+
+hecho es solamente uno entonces vamos a
+
+copiar esto de Aquí vamos a abrir un
+
+powershell y simplemente pegamos El
+
+Comando y damos un enter y esto lo que
+
+va a hacer es empezar a instalar el
+
+click de aws en mi caso yo ya lo tenía
+
+instalado pero puedo volver a instalarlo
+
+simplemente le doy siguiente aceptar
+
+siguiente y así hasta el final y lo
+
+siguiente para confirmar Es simplemente
+
+escribir El Comando a-- version y doy un
+
+enter esto lo que va a hacer es
+
+Mostrarme la versión de aws click que
+
+tengo instalado simplemente voy a
+
+cerrarlo y ahora desde visual Studio
+
+code ya puedo ejecutar ese Comando de
+
+nuevo puedo escribir a-- version y me
+
+muestra la misma versión si no les
+
+aparece este Comando después de
+
+instalarlo cierren el visual Studio code
+
+y vuelven lo abrir una vez ya tengo awc
+
+click pues ya puedo ejecutar El Comando
+
+para poder utilizar este usuario que
+
+Acabo de crear en Im Entonces vamos a
+
+escribir lo siguiente vamos a escribir
+
+aws configure y damos un enter y nos
+
+pide un Access key vamos a venir aquí
+
+vamos a copiar este sk lo voy a pegar
+
+doy un enter luego voy me pide la clave
+
+secreta voy a copiar est y lo voy a
+
+pegar doy un enter y aquí la región en
+
+la que voy a estar trabajando en este
+
+caso es us2 que es la región en la que
+
+tengo creado el proyecto en este caso
+
+aquí no me lo muestra pero si veng en
+
+amplify es decir en el panel de control
+
+de amplify ya puedo cerrar esto y vengo
+
+en amplify aquí en la parte superior
+
+pueden ver que yo estoy escogiendo us2
+
+si ustedes está en otra región por
+
+ejemplo eh supongamos que están en
+
+Latinoamérica y escogen Brasil eh
+
+América del Sur Sao Paulo pueden escoger
+
+o col este nombre s iion s1 en realidad
+
+esto Es dependiendo lo que tenga aquí en
+
+su cuenta si lo han creado en esta
+
+región colocan lo que tienen
+
+seleccionado aquí okay simplemente damos
+
+un enter vamos aale enter al final con
+
+default output format y listo con esto
+
+ya tenemos configurado aws Qué quiere
+
+decir que ahora y puedo ejecutar El
+
+Comando mpx ampx sandbox y bueno lo que
+
+hace en primer lugar es como pueden ver
+
+crear una carpeta punto amplify en donde
+
+está configurando un cdk que es un Cloud
+
+development kit en donde va a traer
+
+algunas configuraciones y esto toma
+
+algunos minutos Así que vamos a esperar
+
+a que termine de descargar todo y luego
+
+vamos a continuar Aquí vamos a ver de
+
+hecho bastantes mensajes que van a ir
+
+apareciendo Okay aquí ya se ha generado
+
+lo que es el stack de sandbox es decir
+
+ya se ha generado todas las herramientas
+
+o entornos de preva para que podamos
+
+trabajar localmente esto quiere decir
+
+que ya puedo abrir otra terminal y algo
+
+que se debe hacer es que este ejecución
+
+o este Comando de mpx mpx sandbox se
+
+debe mantener ejecutando y en otra
+
+terminal va a ejecutar su proyecto de
+
+frontend de cierta forma es como tener
+
+el B ándose en un lado y el Front en
+
+otro Por así decirlo Entonces si venimos
+
+ahora en nuestra aplicación Por ejemplo
+
+yo vengo aquí en la aplicación de
+
+producción y si creo algunos datos Y doy
+
+un enter estos se añaden Okay pero ahora
+
+sí abro la aplicación de desarrollo
+
+vamos a extraer esto hacia un lado y
+
+aquí por ejemplo visito el localhost
+
+3000 intento hacer login por ejemplo
+
+utilizando el mismo correo que habíamos
+
+utilizado Hace algunos minutos por
+
+ejemplo este correo de aquí e intento
+
+bloquearme le doy Sign In y pueden ver
+
+que me dice incorrect username o
+
+password la razón es que ahora la base
+
+datos de desarrollo no es la misma que
+
+la de producción Entonces si nosotros
+
+queremos ver en dónde está este entorno
+
+podemos entrar nuevamente en nuestra
+
+configuración de amplify y aquí en Ver
+
+aplicación vamos a ver que tenemos muy
+
+aparte de nuestro rama Main tenemos
+
+ahora a lo que se llama administrar
+
+entornos aislados y Aquí vamos a ver el
+
+entorno aislado que hemos creado le ha
+
+colocado un nombre allí eh aleatorio
+
+sandbox y demás Pero lo que importa es
+
+que ya tenemos este entorno que nos va a
+
+permitir poder trabajar incluso nosotros
+
+podemos seleccionarlo y podemos
+
+eliminarlo si no nos gusta esto es muy
+
+útil para que cada desarrollador pueda
+
+tener su propio entorno y no interfieran
+
+entre ellos o también se puede empezar a
+
+utilizar entornos similares para poder
+
+compartir ahora para poder implementar
+
+una relación de usuario con tarea vamos
+
+a venir en el código y en la sección
+
+donde tenemos la carpeta amplify en Data
+
+en resource aquí nosotros tenemos
+
+definido el Modelo tod Si nosotros
+
+queremos decirle que al momento de
+
+acceder a una tarea la autorización debe
+
+ser permitida y y aquí dice que se debe
+
+permitir a una I pública es decir que
+
+cualquiera puede acceder lo en este caso
+
+lo tenemos que cambiar este lado es como
+
+los permisos y aquí simplemente le di
+
+digo Esto va a ser permitido solo por el
+
+launer es decir el la persona autorizada
+
+en la autenticación luego lo siguiente
+
+Es que aquí también en Data Al momento
+
+de colocar los modos de autorización
+
+vamos a cambiar este IP Ke por un user
+
+pool que es la forma de decir esto viene
+
+desde la información del usuario Así que
+
+los tienes que autenticar con ese tipo
+
+de de datos que viene desde la
+
+autenticación del usuario esto nos va a
+
+permitir que ahora si nosotros venimos
+
+en la aplicación en page y por ejemplo
+
+aquí hemos obtenido los datos Al momento
+
+de autenticar en esta parte de
+
+authenticator este user trae la
+
+información por lo que yo puedo cambiar
+
+este my to do por ejemplo puedo decir
+
+tareas de y vamos a concatenar lo de lo
+
+que viene de usuario en Sign In details
+
+en login ID por ejemplo y le puedo
+
+colocar el ID del usuario y le puedo
+
+decir tareas de este ID voy a guardarlo
+
+Y si yo vengo en la aplicación en el
+
+local Host 3000 vamos a autenticar noos
+
+o lo guiarnos otra vez Voy a decirle vas
+
+a registrarte con este correo vas a
+
+entrar esta contraseña vamos a crear una
+
+cuenta Esto va a llegar nuevamente al
+
+correo este de prueba que tengo otro
+
+correo es decir este fue el que llegó
+
+ant antes este es el nuevo vamos a
+
+copiar aquí el código este 97 22 33 lo
+
+voy a pegar aquí confirmar de nuevo Este
+
+es el de desarrollo y aquí está el
+
+nombre en este caso del usuario o el ID
+
+del usuario que es su correo Okay esto
+
+lo he obtenido Gracias a que le he
+
+pedido el login ID de hecho si lo notan
+
+la información que tengo aquí en
+
+desarrollo de nuevo no es la misma que
+
+tengo en producción de hecho puedo
+
+refrescar aquí y refrescar aquí y son
+
+dos entornos distintos y bueno para
+
+poder desplegar esto pues hacemos otro
+
+Push y ya estaría ahora si ustedes
+
+quieren ver la información de dónde
+
+están los usuarios autenticados
+
+simplemente vienen en su su cuenta de
+
+amplify o mejor dicho de awws y aquí van
+
+a buscar en cognito por ejemplo que es
+
+el otro servicio de awws que va a
+
+manejar la autenticación y aquí van a
+
+ver su aplicación tanto de out user pool
+
+que pueden ver que hay dos la primera
+
+sería la de producción en donde nosotros
+
+podemos ver por ejemplo los usuarios que
+
+tenemos registrados Okay que aquí tengo
+
+el usuario que está registrado con
+
+correo verificado Y si vuelvo de nuevo
+
+aquí en el panel inicial en el grupo de
+
+usuarios y vengo en el segundo que sería
+
+el entorno de sandbox aquí también vamos
+
+a ver nuevamente el usuario con su
+
+correo verificado ahora para conocer un
+
+poco más de todo esto yo les sugiero que
+
+vengan aquí en la sección de build and
+
+Connect backend y nosotros ya hemos
+
+visto la parte de autenticación aquí hay
+
+otras formas de poder Añadir otras
+
+formas de autenticación como puede ser
+
+por SMS o utilizando también out
+
+providers es decir proveedores tipo
+
+Google y Facebook Solo que el proceso
+
+conlleva que hagamos muchos más pasos
+
+luego también tenemos la posibilidad de
+
+utilizar funciones serverless es decir
+
+poder configurar una función de awws
+
+lambda desde aquí mismo y Esto va a
+
+crear por nosotros esa función y podemos
+
+llamarla esto nos serviría y en caso por
+
+ejemplo cuando un usuario se registra
+
+queremos hacer algo extra como no lo sé
+
+enviar alg un correo extra o ejecutar
+
+determinado tipo de lógica después de
+
+que el usario se ten entique o quizás
+
+cuando el usuario hace una operación
+
+podemos llamar una función serverless o
+
+en realidad también podemos Añadir
+
+cualquier tipo de servicio de awws es
+
+decir podemos tener servicios de
+
+analíticas para poder por ejemplo
+
+recolectar datos de cómo los usuarios
+
+utilizan nuestra aplicación y para esto
+
+awws ya tiene dos servicios que se
+
+encargan de esto por ejemplo uno es
+
+Amazon kinesis y otro es Amazon pinpoint
+
+y para empezar a utilizarlo tendríamos
+
+que alterar el código de backend para
+
+poder Añadir una biblioteca extra todos
+
+estos vienen a partir del paquete awws
+
+amplify y lo mismo por ejemplo si
+
+queremos habilitar también priones de ia
+
+por ejemplo también podríamos
+
+establecerlas dentro de nuestra propia
+
+aplicación y lo mismo se integra dentro
+
+del Código de backends Y a partir de
+
+allí tendríamos que instalar el mismo
+
+paquete y así con el resto de otros
+
+servicios que tiene awws Eso quiere
+
+decir que luego ustedes pueden integrar
+
+datos Geo pueden tener una ap r o pueden
+
+comunicar eventos de su propia
+
+aplicación y otros servicios de
+
+adicionales ahora esto es en cuanto al
+
+backend como yo les dije eh Para crear
+
+la interfaz hemos instalado un paquete
+
+que se llama awws amplify ui react este
+
+paquete de aquí es el que acabamos de
+
+instalar Y si quieren conocer qué otras
+
+interfaces tenemos disponibles
+
+simplemente venimos aquí en esta parte
+
+donde nos lista todos los componentes en
+
+este caso sería para react y aquí
+
+nosotros podemos darle aquí donde dice
+
+get Start building y nos va a mostrar
+
+aquí e la lista de Cómo podemos
+
+instalarlo y código de css que podemos
+
+importar para poder estilizar Fuentes
+
+los colores y demás de hecho los
+
+componentes que hemos utilizado el día
+
+de hoy vienen a partir de todo todos
+
+estos componentes que tenemos aquí aquí
+
+tenemos botones ya estilizados por
+
+ejemplo tenemos input que ya vienen
+
+estilizados y si bajamos un poco vamos a
+
+ver también una sección que se llama
+
+connected components que son componentes
+
+un poco más grandes en donde se unen
+
+varios de estos y por ejemplo Aquí está
+
+el authenticator que nosotros hemos
+
+utilizado este authenticator ya tiene
+
+también cambio de tema y demás en
+
+nuestro caso estamos utilizando la
+
+versión Clara en nuestra aplicación es
+
+decir hemos estado utilizando esto pero
+
+si quisiéramos cambiar los temas también
+
+podríamos utilizarlo incluso tiene
+
+interfaces para ya tener por ejemplo
+
+crecimiento facial o detección de rostro
+
+y también tiene interfaces hechas para
+
+poder cambiar todos los temas de la
+
+aplicación Así que podemos ir
+
+alterándolo todo esto ya un poco más de
+
+pasos Así que si a ustedes les interesa
+
+crear un proyecto mucho más a fondo con
+
+varios de estos servicios pueden dar
+
+idea de qué les gustaría ver y
+
+eventualmente podría crearlos muy bien
+
+eso ha sido todo por el ejemplo del día
+
+de hoy y como les mencioné al inicio del
+
+video hay un sitio llamado frogames
+
+formation.com en donde ustedes pueden
+
+allí obtener cursos y pueden empezar a
+
+conocer también de aws ya que tiene
+
+cursos avanzados por ejemplo tiene un
+
+curso dedicado cognito que les vendría
+
+bastante bien para poder conocer más de
+
+Cómo funciona la plataforma además que
+
+también tiene otros cursos dedicados a
+
+Inteligencia artificial o servicios de
+
+awws de python de javascript y muchos
+
+otros cursos enfocados en programación y
+
+servicios de la nube Así que si les
+
+interesa les dejo el enlace en la
+
+descripción para que puedan visitarlo
+
+nos vemos en un siguiente ejemplo
+
+práctico eso ha sido todo por el video
+
+del día de hoy si tienes dudas puedes
+
+dejarla en los comentarios o en la
+
+descripción dejo un enlace para que te
+
+puedas unir a la comunidad de discord en
+
+donde encontrarás a otros
+
+desarrolladores o si en caso de enlace
+
+está caído puedes ir a fastd discord
+
+para acceder más rápidamente dejo mi
+
+Twitter donde típicamente comparto
+
+algunos recursos interesantes de
+
+desarrollo y programación en general mi
+
+Instagram donde comparto algunas
+
+noticias cortas todos los días el tiktok
+
+donde comparto videos cortos e
+
+informativos y mi canal principal en
+
+donde comparto opiniones y noticias de
+
+tendencias nuevas además también dejo mi
+
+web en donde puedes reservar asesorías
+
+personalizadas Gracias por ver y nos
+
+vemos en un próximo video
+
